@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tastatur</title>
+</head>
+<style>
+    .Boks {
+        height: 20px;
+        width: 20px;
+        background-color: black;
+        color: antiquewhite;
+        margin: 1px;
+    }
+
+   
+    .tastaturBoks {
+       
+        background-color: rgb(70, 66, 66);
+        color: antiquewhite;
+    }
+</style>
+
+<body>
+
+
+    <div class="tastaturBoks">
+        <div class="Boks">
+            <div class="Q Boks" onclick="prin(this)">Q</div>
+            <div class="A Boks" onclick="prin(this)">A</div>
+            <div class="Z Boks" onclick="prin(this)">Z</div>
+            <p>
+        </div>
+        <div class="W Boks"  onclick="prin(this)">W</div>
+        <div class="S Boks"  onclick="prin(this)">S</div>
+        <div class="X Boks"  onclick="prin(this)">X</div>
+        </p><p>
+        <div class="E Boks"  onclick="prin(this)">E</div>
+        <div class="D Boks"  onclick="prin(this)">D</div>
+        <div class="C Boks"  onclick="prin(this)">C</div>
+     <p></p>
+        <div class="R Boks"  onclick="prin(this)">R</div>
+        <div class="F Boks"  onclick="prin(this)">F</div>
+        <div class="V Boks"  onclick="prin(this)">V</div>
+        <p></p>
+        <div class="R Boks"  onclick="prin(this)">T</div>
+        <div class="F Boks"  onclick="prin(this)">G</div>
+        <div class="V Boks"  onclick="prin(this)">B</div>
+        <p>
+            <div class="R Boks"  onclick="prin(this)">Y</div>
+        <div class="F Boks"  onclick="prin(this)">H</div>
+        <div class="V Boks"  onclick="prin(this)">N</div>
+        </p>
+
+    </div>
+    <br>
+    <div id="tekstUt"></div>
+
+    <script>
+    let skrivTekst = document.getElementById('tekstUt');
+     
+    
+        function prin(DivElement) {
+        skrivTekst.innerHTML += DivElement.innerHTML;
+        }
+
+    </script>
+
+</body>
+
+</html>

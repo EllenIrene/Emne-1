@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siste Krokodillespill</title>
+</head>
+<h1 style="background-color: beige;"> C R O C K O D I L E</h1>
+<body>
+    Sum point:
+   <div id="point" 
+   style="background-color: blanchedalmond; 
+   font-size: x-large;">0</div><br>
+   <img src="krokodillespill.png" />
+   <p id="fistNum"></p>
+   <input id="InPut"></input>
+   <p id="secondNum"></p><br>
+   <button onclick="submit()">Submit</button>
+   <button onclick="reset()">Reset</button>
+
+   <script>
+    let point = 0;
+    let input = "";
+    let numOne = 0;
+    let numTwo = 0;
+    let rightAnswer = "";
+
+
+function reset(){
+    updateNumbers();
+}
+    function updateNumbers(){
+        numOne = getRandom();
+        numTwo = getRandom();
+        document.getElementById('fistNum').innerHTML = numOne;
+        document.getElementById('secondNum').innerHTML = numTwo;
+
+    }
+
+    function setRightAnswer(){
+        if(numOne<numTwo){
+            rightAnswer = '<';
+        }else if(numOne>numTwo){
+            rightAnswer= '>';
+        }else{
+            rightAnswer='=';
+        }
+    }
+    function compare(){
+        if(input == rightAnswer){
+            point++;
+        }else {
+            point--;
+        }
+    }
+        function submit(){
+            input= document.getElementById('InPut').value;
+            setRightAnswer()
+            compare()
+            document.getElementById('point').innerHTML = point;
+        }
+   
+    function getRandom(){
+        return Math.round(Math.random() * 50);
+    }
+
+   </script>
+
+</body>
+</html>

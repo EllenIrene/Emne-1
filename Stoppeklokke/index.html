@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stoppeklokke</title>
+    <style>
+        .wrapper{
+            background-color: rgba(71, 1, 57, 0.801);
+            color: blanchedalmond;
+            height: 220px;
+            width: 220px;
+            border-radius: 50%;
+            padding: 20px;
+        }
+        .clockButton{
+            background-color: rgb(127, 67, 67);
+            color:blanchedalmond;
+            margin-top: 20px;
+            margin-left: 15px;
+            border-radius: 50%;
+            height:55px;
+            width: 50px;
+        }
+
+        .clockDisplay{
+            height:20px;
+            width:40px;
+            border: 1px solid yellow;
+            margin-top: 10px;
+            margin-left: 100px;
+            background-color: rgb(44, 44, 14);
+        }
+
+        .rounds{
+            background-color: lightgoldenrodyellow;
+            height:50px;
+            width:90px;
+            border: 1px solid orange;
+            margin-left: 50px;
+            font-size: x-small;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+    <button class="clockButton" onclick="start()">Start</button>
+    <button class="clockButton" onclick="rounds()">New round</button>
+    <button class="clockButton" onclick="blank()">Re-<br>Sett</p></button><br>
+    <div id="app" class="clockDisplay"></div>
+    Time and round:<div id="lastRound" class="roundsList"></div><br>
+</div>
+
+    <script>
+        const app = document.getElementById('app');
+        const lastRound = document.getElementById('lastRound');
+        let seconds = 0;
+        var timer = 0;
+
+        function start(){
+            setInterval(countSeconds, 1000);
+        }
+        function countSeconds(){
+            app.innerHTML = seconds;
+            seconds++;
+        }
+        function rounds(){
+            lastRound.innerHTML +=`<li>${seconds -1} seconds </li>`;
+            clearInterval(timer);
+            seconds = 0;
+        }
+        function blank(){
+            location.reload()
+        }
+
+    </script>
+    
+</body>
+</html>

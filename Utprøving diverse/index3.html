@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="nyFarge">
+    <div id="showText"></div>
+    <button onclick="enText1()">En</button>
+    <button onclick="enText2()">To</button>
+    <button onclick="nybakgrunn()">Bakgrunnsfarge</button>
+
+    <script>
+        var showText =document.getElementById('showText');
+        var TextToShow ="";
+
+        function enText1(){
+            TextToShow="Hei på deg";
+            showText.innerText= TextToShow;
+        }
+
+        function enText2(){
+            TextToShow="Hade bra!";
+            showText.innerText= TextToShow;
+        }
+        function nybakgrunn(){
+          if  (document.getElementById('nyFarge').style.backgroundColor== 'pink')
+          {document.getElementById('nyFarge').style.backgroundColor=''}
+          else  { 
+            document.getElementById('nyFarge').style.backgroundColor= 'pink';
+        }
+        }
+    </script>
+</body>
+</html>

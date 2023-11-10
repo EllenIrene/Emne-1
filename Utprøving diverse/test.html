@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="colorLightBlue">
+    <div id="mainDiv"></div>
+    <button onclick="numberOne(14)">første tall</button>
+    <button onclick="numberOne(3)">Andre tall</button>
+    <button onclick="numberOne(1973)">Tredje tall</button>
+    <button onclick="increaseNum()">øk med 1</button>
+    <button onclick="increaseNum2()">Øk med 2</button>
+    <button onclick="changeColor()">Bytt bakgrunnsdarge</button>
+    
+
+
+    <script>
+        var mainDiv = document.getElementById('mainDiv');
+        var showNum = 0;
+
+        function numberOne(selectedNum) {
+            showNum = selectedNum;
+            mainDiv.innerHTML = showNum;
+        }
+        function increaseNum() {
+            showNum++;
+            mainDiv.innerHTML = showNum;
+        }
+
+        function increaseNum2() {
+            showNum += 2;
+            mainDiv.innerHTML = showNum;
+        }
+
+        function changeColor() {
+            if (document.getElementById('colorLightBlue').style.backgroundColor == 'darkgrey')
+            {document.getElementById('colorLightBlue').style.backgroundColor = ''}
+            else {
+            document.getElementById('colorLightBlue').style.backgroundColor = 'darkgrey';
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

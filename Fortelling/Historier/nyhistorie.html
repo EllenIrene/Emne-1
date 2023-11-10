@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyere historie</title>
+</head>
+
+<body>
+    Det var en gang en jente
+    som het <div id="navn"></div>, som måtte
+    ta <div id="fremkomstmiddel"></div>
+    frem og tilbake til sin
+    hjemby <div id="by"></div> hver eneste dag.
+<ul>
+    <h1>Navn:</h1>
+    <li id="marie"onclick="settNavn('Marie')">Marie</li>
+    <li id="ellen"onclick="settNavn('Ellen')">Ellen</li>
+    <li id="linn"onclick="settNavn('Linn')">Linn</li>
+</ul>
+<ul>
+    <h1>Fremkomstmiddel: </h1>
+
+    <li id="motorsykkel"onclick="setFremkomstmiddel('Motorsykkel')">Motorsykkel</li>
+    <li id="ferje"onclick="setFremkomstmiddel('Ferje')" >Ferje</li>
+    <li id="tog" onclick="setFremkomstmiddel('Tog')">Tog</li>
+</ul>
+
+<ul>
+    <h1> By</h1>
+
+    <li id="porsgrunn" onclick="setBy('Porsgrunn')">Porsgrunn</li>
+    <li id="tønsberg" onclick="setBy('Tønsberg')">Tønsberg</li>
+    <li id="larvik" onclick="setBy('Larvik')">Larvik</li>
+</ul>
+
+<script>
+    var GiNavn = document.getElementById('navn').innerHTML;
+    var velgFremkomstmiddel = document.getElementById('fremkomstmiddel').innerHTML;
+    var velgBy = document.getElementById('by').innerHTML;
+
+    function settNavn(GiNavn){
+    navn.innerHTML = GiNavn;
+
+    }
+
+    function setFremkomstmiddel(velgFremkomstmiddel){
+        fremkomstmiddel.innerHTML = velgFremkomstmiddel;
+
+    }
+
+    function setBy(velgBy){
+    by.innerHTML = velgBy;
+
+    }
+</script>
+</body>
+</html>

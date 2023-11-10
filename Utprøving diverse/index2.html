@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="bakgrunn">
+    <div id="mainDiv"></div>
+    <button onclick="bakgrunnsFarge()">Endre bakgrunnsfargen</button>
+    <button onclick="navn1(16,'blue', 40,20)"> Nummer 1</button>
+    <button onclick="navn1(47,'red', 500,500)"> Nummer 2</button>
+    <button onclick="navn3('yellow', 10, 60)"> Nummer 3</button>
+    <button onclick="navn4('green',120,55)"> Nummer 4</button>
+    <button onclick="increaseNum()">Øk nummer</button>
+    <button onclick="secondNum()">Øk nummer med to ekstra</button>
+
+    <script>
+       var mainDiv= document.getElementById('mainDiv');
+        var numToShow = 0;
+      
+
+
+        function navn1(selectedNumber,farge, bredde, høyde){
+            numToShow= selectedNumber;
+            mainDiv.innerHTML= numToShow;
+        }
+
+        function navn3(hei,bredde, høyde){
+            document.getElementById('mainDiv').innerHTML=/*html*/`
+            <div style="background-color: ${hei}; width: ${bredde}%; height:  ${høyde}px;"></div>`;
+        }
+        function navn4(color, bredde, høyde){
+            document.getElementById('mainDiv').innerHTML=/*html*/`
+            <div style="background-color: ${color}; width: ${bredde}%; height:  ${høyde}px;"></div>`;
+        }
+
+        function increaseNum(){
+           numToShow++;
+            mainDiv.innerHTML= numToShow;
+        }
+        function secondNum(){
+            var number2= 2;
+            mainDiv.innerHTML= numToShow += number2;
+
+            console.log(numToShow, "<---Dette er verdien i numToShow ----> ", number2);
+        }
+
+        function bakgrunnsFarge() {
+            document.getElementById('bakgrunn').style.backgroundColor = 'red';
+        }
+
+        function resetBakgrunnsFarge() {
+            document.getElementById('bakgrunn').style.backgroundColor = '';
+        }
+    </script>
+</body>
+</html>

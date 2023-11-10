@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgba(84, 83, 58, 0.225); color: rgba(3, 67, 67, 0.828);">
+    <h1 id="overskrift">Sjokoladekake</h1>
+    Nytt navn på siden:
+    <input id="inpFelt" type="text">
+   Velg bakgrunnsfargen på overskriften:
+    <input id="inpFarge" type="text">
+    <button onclick="fargeOgTekstEndring('brown', 'NyTekst')">Sett inn ny overskrift og bakgrunnsfarge</button>
+    <button onclick="blankAlle()">Slett overskrift</button>
+    <p></p>
+    <div class="bildeKake">
+        <img src="kake.jpg" width="200px">
+    </div>
+    <ul><div style="font-size: larger;">Velg ingrediens:</div><p></p>
+        <li>
+         <div onclick="ingrediens(' kakao - ')"> Kakao</div>  
+        </li>
+        <li>
+           <div onclick="ingrediens(' Smør - ')"> Smør </div> 
+        </li>
+        <li>
+           <div onclick="ingrediens(' Sukker - ')"> Sukker </div> 
+        </li>
+        <li>
+            <div onclick="ingrediens(' Egg  -')"> Egg </div> 
+         </li>
+         <li>
+            <div onclick="ingrediens(' Mel  -')"> Mel </div> </style> 
+         </li>
+    </ul>
+     
+<p></p>Innhold i bakebollen :<p></p>
+    <div id="bakeBolle" style="font-size: larger; background-color: beige;">  </div><button onclick="blankBolle()">Tøm Bakebollen</button>
+    <p></p>
+    <h1 id="endreFarge">
+        Fremgangsmåte:
+    </h1>  
+    <button onclick="fargeEndring('pink')" >Rosa</button>
+    <button onclick="fargeEndring('black')" >Svart</button>
+    <button onclick="fargeEndring('green')" >Grønn</button><p></p>
+    Ta frem alle igredienser, før du begynner.
+    Sett stekovn på 220 grader og gjør klar kakeform.
+    Bland ingrediensene godt i en bolle og hell røren over
+    i en smurt form. Sett kaken i nederste rille og stek i 20 min.</br>
+  
+    <!-- <p><button onclick="fargeOgTekstEndring('brown', 'NyTekst')">Sett inn ny overskrift og bakgrunnsfarge via innputtfelt</button> -->
+        <button onclick="forsteEndring('brown', 'NyTekst')" >Bytt overskrift til sjokoladesuppe, med brun bakgrunnsfarge </button></p>
+        
+<script>
+// function rosa(){
+//     document.getElementById('endreFarge').style.backgroundColor= 'pink';
+// }
+// function svart(){
+//     document.getElementById('endreFarge').style.backgroundColor= 'black';
+// }
+// function grønn(){
+//     document.getElementById('endreFarge').style.backgroundColor= 'green';
+// }
+
+// Legg til en knapp til under fargeknappene med teksten "Bytt farge og tekst", den skal hente overskriften "sjokoladekake"
+// og bytte den til sjokoladesuppe, samtidig som bakgrunnsfargen på overskriften skal byttes til brun/en annen farge
+// prøv først å lage en funksjon som setter verdiene = brun = "sjokoladesuppe", så prøv å lag en metode med variabel der du kan sende inn hva som helst av tekst og farge
+
+function fargeEndring(nyfarge){
+    document.getElementById('endreFarge').style.backgroundColor= nyfarge;
+}
+
+    function ingrediens(valgtingrediens){
+        document.getElementById('bakeBolle').innerHTML+= valgtingrediens;
+    }
+function forsteEndring(){
+    document.getElementById('overskrift').innerHTML="Sjokoladesuppe";
+    document.getElementById('overskrift').style.backgroundColor= 'brown';
+}
+
+    function endreHvaSomHelst(inputFarge, inputTekst){
+         document.getElementById('overskrift').style.backgroundColor= inputFarge;
+        document.getElementById('overskrift').innerHTML= inputTekst;
+}
+
+function fargeOgTekstEndring(){
+        let inputFarge= document.getElementById('inpFarge').value;
+         document.getElementById('overskrift').style.backgroundColor= inputFarge;
+         
+        let inputTekst= document.getElementById('inpFelt').value;
+       document.getElementById('overskrift').innerHTML= inputTekst;
+   
+    
+}
+function blankAlle(){
+    document.getElementById('overskrift').innerHTML='';
+}
+
+function blankBolle(){
+    endreHvaSomHelst('tomato', "Noe annet");
+    document.getElementById('bakeBolle').innerHTML='';
+}
+
+</script>
+
+Legg til en knapp til under fargeknappene med teksten "Bytt farge og tekst", den skal hente overskriften "sjokoladekake"
+// og bytte den til sjokoladesuppe, samtidig som bakgrunnsfargen på overskriften skal byttes til brun/en annen farge
+// prøv først å lage en funksjon som setter verdiene = brun = "sjokoladesuppe", så prøv å lag en metode med variabel der du kan sende inn hva som helst av tekst og farge
+
+</body>
+
+</html>

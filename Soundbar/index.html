@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soundbar 2</title>
+    <style>
+          div{
+           
+           height:50px;
+           width:50px;
+           border: dashed rgb(248, 149, 10) 1px;
+           cursor: pointer;
+       
+       }
+       div:hover{
+           transform: scale(1.1);
+       }
+       .one{
+           background-color: rgba(233, 110, 110, 0.66);
+       }
+       .two{
+           background-color: rgba(115, 155, 236, 0.505)
+       }
+       .three{
+           background-color: rgba(202, 162, 185, 0.643);
+       }
+       .four{
+           background-color: rgb(141, 94, 100)
+       }
+       .five{
+           background-color: rgba(206, 62, 165, 0.475)
+       }
+       .six{
+           background-color: rgba(219, 5, 30, 0.497)
+       }
+    </style>
+</head>
+
+<body style="background-color: rgb(60, 32, 32);">
+    <div class="one" onclick="play('bubbles')"><audio id="bubbles" src="bubbles.mp3"></audio></div>
+    <div class="two" onclick="play('clay')"><audio id="clay" src="clay.mp3"></audio></div>
+    <div class="three" onclick="play('confetti')"><audio id="confetti" src="confetti.mp3"></audio></div>
+    <div class="four" onclick="play('glimmer')"><audio id="glimmer" src="glimmer.mp3"></audio></div>
+    <div class="five" onclick="play('moon')"><audio id="moon" src="moon.mp3"></audio></div>
+    <div class="six" onclick="play('ufo')"><audio id="ufo" src="ufo.mp3"></audio></div>
+
+
+<script>
+    function play(selectedSound){
+        document.getElementById(selectedSound).play();
+    }
+
+</script>
+</body>
+</html>

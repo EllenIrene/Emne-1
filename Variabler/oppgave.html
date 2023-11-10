@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ny oppgave fra torsdag 26/10</title>
+</head>
+
+<body>
+   <div id="A" onclick="a(this)">Hei</div>
+   <p></p>
+   <div id="B" onclick="a(this)">Hallo</div>
+   <p></p>
+   <div id="C" onclick="a(this)">Hadet</div>
+   <div id="D" onclick="a(this)">Hurra</div>
+   
+   <p><div id="enDiv" onclick="a(this)">this prøving</div></p>
+
+   <div id="nyTekst" onclick="nyVariabelVerd('Tekstfelt for Divene og klikkabar Resett')">Tekstfelt for Divene og klikkabar Resett</div>
+   <p></p>
+   <button onclick="kopiTekstFraAtilB()">Kopier tekst fra (A)Hei til(B) Hallo </button>
+   <button onclick="byttTekst1()"> Bytt mellom Hei og Hallo</button>
+   <button onclick="byttTekst2()">Bytt fra Hallo til Hei</button>
+   
+   <script>
+      
+      var nyTekst = document.getElementById('nyTekst');
+      var tekstToShow = "";
+      
+     var DivA = document.getElementById('A');
+     var DivB = document.getElementById('B');
+     var DivC = document.getElementById('C');
+     var DivD = document.getElementById('D');
+     var DivE = document.getElementById('enDiv');
+
+
+      function nyVariabelVerd(selectedText) {
+         tekstToShow = selectedText;
+         nyTekst.innerHTML = tekstToShow;
+      }
+
+      function kopiTekstFraAtilB() {
+         DivB.innerHTML = DivA.innerHTML;
+      }
+
+      function byttTekst1() {
+         DivB.innerHTML = DivA.innerHTML;
+         DivA.innerHTML = DivB.innerHTML;
+      }
+
+      function byttTekst2() {
+         DivB.innerHTML = DivA.innerHTML;
+      }
+
+function a(tekstToShow){
+   nyTekst.innerHTML= tekstToShow.innerHTML;
+}
+
+   </script>
+   <p></p>
+   1. Få til en knapp som kopierer Teksten fra A til B<p>
+      2. lag en ny knapp for å bytte innhold mellom A og B</p>
+   3.  Når du trykker på en av divene skal du sette en variabelverdi "<p>
+      
+      4. lag en egen funksjon som oppdaterer nyTekst med
+      variabelverdien din</p>
+
+   også kan du gjerne lese litt på moodle om this for å<p>
+      se om du kan bruke (this) til å
+      hente ut verdi istedenfor fastsatte verdiene "hei" / "hallo" - evt til </p>
+      videre utfordring kan du også lagre innholdet i de<p> 
+         ulike divene i hver sin
+      variabel og prøve å bruke variablene istedenfor "Hei" / "hallo"</p>
+
+   // ser ut som du har fått til
+   // det meste der, den siste delen med
+   // nyVariabelVerd funksjonen
+   // tenkte jeg du kan kalle på hver gang du trykker
+   // på en av divene isteden for nytekst diven
+
+   Da setter jeg opp en ny 1-1 time med deg mandag 30
+   oktober kl 12.30 om det passer?
+
+   så kan du prøve å jobbe med den oppgaven i
+   mellomtiden, og som alltid bare spør
+   om du står helt fast eller ikke kommer
+   deg videre, eller om det er noe som er uklart med oppgaveteksten
+   // function blankAll(){
+   // document.getElementById('A').innerHTML='';
+   // document.getElementById('B').innerHTML='';
+   // }
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+        div{
+            float: inline-start;
+            margin: 5px;
+            
+            
+        }
+        .historie{
+            border: 2px dashed rgb(227, 114, 133);
+            padding: 30px;
+            font-size: 25px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            color: brown;
+        }
+
+        
+
+        .utvalget{
+           clear:left;
+            cursor: 
+            pointer;
+            
+        }
+
+        .valgBoks{
+
+            font-size: 20px;
+            background-color:  rgba(243, 211, 130, 0.439) ;
+            border: 2px solid rgb(2, 54, 14);
+            border-radius: 55%;
+            padding: 20px;
+            width: 70px;
+            height: 30px;
+            text-align:center;
+        }
+       
+    
+    </style>
+</head>
+<body>
+    <div class="historie" id="historieUt">
+        
+    </div>
+<div class="startRad valgBoks"onclick="velgFørsteOrd(this)">Grønn</div> 
+<div class="utvalget valgBoks"onclick="velgFørsteOrd(this)">Rød</div>
+<!-- <div class="endaEn valgBoks" onclick="velgFørsteOrd(this)">Gul</div> -->
+
+<div class="startRad valgBoks"  onclick="velgAndreOrd(this)">Katt</div> 
+<div class="utvalget valgBoks"  onclick="velgAndreOrd(this)">Mann</div>
+<!-- <div class="endaEn valgBoks" onclick="velgAndreOrd(this)">Gammel dame</div> -->
+
+<div class="startRad valgBoks"  onclick="velgTredjeOrd(this)">Stirret</div> 
+<div class="utvalget valgBoks"  onclick="velgTredjeOrd(this)">Hoppet</div>
+<!-- <div class="endaEn valgBoks" onclick="velgTredjeOrd(this)">Lo</div> -->
+
+<div class="startRad valgBoks"onclick="velgFjerdeOrd(this)">Lufta</div> 
+<div class="utvalget valgBoks"onclick="velgFjerdeOrd(this)">Veggen</div>
+<!-- <div class="endaEn valgBoks"onclick="velgFjerdeOrd(this)">Vannet</div> -->
+<br>
+<script>
+    const utput = document.getElementById('historieUt');
+    let FørsteOrd = "___";
+    let AndreOrd = "___";
+    let TredjeOrd = "___";
+    let FjerdeOrd = "___";
+    byggHistorien(); 
+
+    function byggHistorien(){
+        utput.innerHTML = `
+        Det var en gang en ${FørsteOrd} ${AndreOrd} som ${TredjeOrd} i ${FjerdeOrd} -
+        Og det ble det mye morro ut av. nipp, snapp, snute, så var dette flotte eventyret helt og holdent ute.
+        `;
+    }
+    function velgFørsteOrd(velg){
+        FørsteOrd = velg.innerHTML;
+        byggHistorien(); 
+    }    
+
+    function velgAndreOrd(velg){
+        AndreOrd = velg.innerHTML;
+        byggHistorien(); 
+    }
+
+    function velgTredjeOrd(velg){
+        TredjeOrd = velg.innerHTML;
+        byggHistorien(); 
+    }
+
+    function velgFjerdeOrd(velg){
+        FjerdeOrd = velg.innerHTML;
+        byggHistorien(); 
+    }
+
+</script>
+</body>
+</html>

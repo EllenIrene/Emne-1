@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>krokodille1</title>
+</head>
+<style>
+.boks{
+   display: flex;
+ flex-direction: row; 
+ color: rgb(220, 112, 11);
+ font-size: larger;
+}
+#point{
+   font-size: xx-large;
+   color: rgb(165, 151, 42);
+    
+}
+</style>
+<body>
+    <h1>Poeng</h1>
+    <img src="krokodillespill.png"/>
+<p id="point"> 0 </p></br>
+<div class="boks">
+
+<div id="numOne"></div>
+<input id="input" type="text">
+<div id="numTwo"></div></div>
+<p>
+    <button onclick="submit()">Submit</button>
+    <button onclick="reset()">Reset</button>
+</p>   
+ 
+    <script>
+        let point = 0;
+        let numOne = 0;
+        let numTwo = 0;
+        let inputfield = "";
+        let rettSvar ="";
+
+        function reset(){
+            updateNumbers();
+        }
+        function updateNumbers(){
+            numOne = getRandomNumber();
+            numTwo = getRandomNumber();
+            document.getElementById('numOne').innerHTML= numOne; 
+            document.getElementById('numTwo').innerHTML= numTwo; 
+        }
+        function finnRettSvar(){
+            if(numOne < numTwo){
+                rettSvar = '<';
+            }
+            else if( numOne > numTwo){
+                rettSvar = '>';
+            }
+            else rettSvar = '=';
+        }
+        function samenlign(){
+         if (inputfield == rettSvar){
+            point++;
+         }
+         else{
+            point--;
+         } 
+
+        }
+        function submit(){
+            inputfield = document.getElementById('input').value;
+            finnRettSvar()
+            samenlign()
+            document.getElementById('point').innerHTML= point; 
+                
+        //        Hvis jeg setter inn RESETT() her, da hadde jeg ikke 
+        //        trengt knappen Resett...Så derfor la jeg ikke den til her. 
+        }
+
+
+        function getRandomNumber() {
+          return Math.round(Math.random() * 10);
+        } 
+        </script>
+</body>
+<!-- // trinn 1 - lag funksjoner for hvert steg
+// sy det sammen
+ //submit 
+    // hva er riktig svar? <, >, =
+    // sammenligne riktig svar med det brukere har skrevet inn
+    // oppdatere poengsum med +1 eller -1 
+    // poeng skal dukke opp under poeng
+    // (generer nye tall) -->
+</html>

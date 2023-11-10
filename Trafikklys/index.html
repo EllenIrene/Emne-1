@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variabler</title>
+    <style>
+        .sort {
+            background-color: black;
+            width: 100px;
+            height: 100px;
+
+        }
+
+        .grønn {
+            width: 200px;
+            height: 200px;
+           
+            background-color: rgb(44, 72, 23);
+        }
+
+        .orangs {
+            width: 200px;
+            height: 200px;
+            background-color: rgba(230, 173, 16, 0.898);
+        }
+
+        .rød {
+            width: 200px;
+            height: 200px;
+            background-color: rgba(246, 54, 1, 0.936);
+        }
+    </style>
+</head>
+
+<body>
+<div class="sort" id="valgtBoks"></div>
+<button onclick="rosaFarge()">Rosa</button>
+<button onclick="tomatFarge()">Tomat</button>
+<button onclick="brunFarge()">Brun</button>
+    <div class="grønn" id="grønn" onclick="endreFarge('green', 'grønn')"></div>
+    <div class="orangs" id="orangs" onclick="endreFarge('yellow', 'orangs')"></div>
+    <div class="rød" id="rød" onclick="endreFarge('red', 'rød')"></div>
+
+    <script>
+        var selectedColor='black'
+
+        function rosaFarge(){
+            selectedColor= 'pink'
+            setBoxColor()
+        }
+        function tomatFarge(){
+            selectedColor= 'tomato'
+            setBoxColor()
+        }
+        function brunFarge(){
+            selectedColor= 'brown'
+            setBoxColor()
+        }
+
+        function setBoxColor(){
+            document.getElementById('valgtBoks').style.backgroundColor= selectedColor;
+        }
+
+        function endreFarge(nyfarge,id){
+        document.getElementById(id).style.backgroundColor= nyfarge;
+        }
+  
+    </script>
+
+    
+</body>
+
+</html>

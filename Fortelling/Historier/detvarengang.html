@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Valgt historie</h1>
+   <div id="historieFortelling"></div> 
+
+   <ul><mark>Velg navn</mark></ul>
+   <li  onclick="velgNavnId(this)"> Ellen </li>
+   <li  onclick="velgNavnId(this)"> Irene </li>
+  
+   <ul><mark>Velg sted</mark></ul>
+   <li onclick="velgById(this)">Porsgrunn</li>
+   <li onclick="velgById(this)">Larvik</li>
+   <p><ul><mark>Velg Historie</mark></ul></p>
+<p>
+<div id="idHistorien" onclick="historienSomskalvelges()"> Det var en gang en glad jente som het <div id="navn"></div> som skulle
+ på ferie til <div id="land"></div>. Hun gledet seg veldig.
+ <p>
+
+<script>
+    var velgNavn = document.getElementById('navn').innerHTML;
+    var velgStory = document.getElementById('idHistorien').innerHTML;
+    var place = document.getElementById('land').innerHTML;
+    
+    
+    function velgById(place){
+        land.innerHTML = place.innerHTML; 
+
+    }
+    function velgNavnId(velgNavn){
+        navn.innerHTML = velgNavn.innerHTML;
+
+    }
+  function historienSomskalvelges(){
+    document.getElementById('historieFortelling').innerHTML= document.getElementById('idHistorien').innerHTML;
+  }
+</script>
+
+
+</body>
+</html>

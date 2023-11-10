@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Krokodille 5</h1>
+    <div id="pointID">0</div>
+    <img src="krokodillespill.png">
+    <div id="firstNum"></div>
+    <input id="innPut" type="text"> </input>
+    <div id="secondNum"></div>
+    <button onclick="Sibmit()">Submit</button>
+    <button onclick="Reset()">Reset</button>
+
+    <script>
+        let point = 0;
+        let inputfield = "";
+        let firstNum = 0;
+        let secondNum = 0;
+        let RightAnswer = ""
+
+            ;
+
+        function Reset() {
+            updateNumbers();
+        }
+
+        function updateNumbers() {
+            firstNum = getRandomNumber();
+            secondNum = getRandomNumber();
+
+            document.getElementById("firstNum").innerHTML = firstNum;
+            document.getElementById('secondNum').innerHTML = secondNum;
+        }
+
+        function finnRiktigSvar() {
+            if (firstNum < secondNum) {
+                RightAnswer = '<';
+            } else if (firstNum > secondNum) {
+                RightAnswer = '>';
+            }
+            else {
+                RightAnswer = '=';
+            }
+        }
+        function samenlign() {
+            if (inputfield == RightAnswer) {
+                point++;
+            }
+            else {
+                point--;
+            }
+        }
+        function Sibmit() {
+            inputfield = document.getElementById('innPut').value;
+            finnRiktigSvar()
+            samenlign()
+            document.getElementById('pointID').innerHTML = point;
+            Reset()
+        }
+
+        function getRandomNumber() {
+            return Math.round(Math.random() * 10);
+        }
+    </script>
+</body>
+
+</html>

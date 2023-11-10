@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eksempel 1</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+</head>
+<style>
+
+</style>
+    
+
+    
+<body>
+
+    <div>
+        
+        <button onclick="noLayout()" style="background-color: rgba(217, 255, 0, 0.215); color: rgba(165, 42, 42, 0.623);">
+            Ingen layout
+        </button>
+        <button onclick="verticalLayout()"style="background-color: rgba(217, 255, 0, 0.215);color: rgba(165, 42, 42, 0.623);">
+            Vertikal layout
+        </button>
+        <button onclick="horizontalLayout()"style="background-color: rgba(217, 255, 0, 0.215);color: rgba(165, 42, 42, 0.623);">
+            Horisontal layout
+        </button>
+        <button onclick="gridLayout()"style="background-color: rgba(217, 255, 0, 0.215);color: rgba(165, 42, 42, 0.623);">
+            Grid layout
+        </button>
+    </div>
+    </div>
+    <div style="color: rgba(81, 75, 86, 0.38);"><h1>Eksempel 1</h1></div>
+    <div id="cards">
+        <div class="card">
+            <div class="header green" onclick="showTools()">
+                Verktøy
+            </div>
+            <div id="cardTools"></div>
+        </div>
+        <div class="card">
+            <div class="header blue" onclick="showHtml()">
+                HTML
+            </div>
+            <div id="cardHtml"></div>
+        </div>
+        <div class="card">
+            <div class="header red" onclick="showCss()">
+                CSS
+            </div>
+            <div id="cardCss"></div>
+        </div>
+        <div class="card">
+            <div class="header yellow" onclick="showJavaScript()">
+                JavaScript
+            </div>
+            <div id="cardJavaScript"></div>
+        </div>
+        <div class="card">
+            <div class="header dark" onclick="showBodyGame()">
+                Hode, kropp og ben
+            </div>
+            <div id="cardGame" class="bodies"> </div>
+        </div>
+    </div>
+
+</body> 
+</html>

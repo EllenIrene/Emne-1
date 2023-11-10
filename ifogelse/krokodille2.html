@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krokodille 2</title>
+</head>
+
+<body>
+    <h1>Krokodillespill</h1>
+    <img src="krokodillespill.png" />
+    <p>
+        Sum poeng:
+    <div id="point">0 </div>
+    </p>
+
+    <div id="firstNum"></div>
+    <input id="input" type="text">
+    <div id="secondNum"></div>
+
+    <button onclick="submit()">Submit</button>
+    <button onclick="reset()">Reset</button>
+
+    <script>
+        let firstNum = 0;
+        let secondNum = 0;
+        let point = 0;
+        let inputfield ="";
+        let rightAnswer ="";
+
+        function reset() {
+            updateNumbers();
+        }
+
+        function updateNumbers() {
+            firstNum = getRandomNumber();
+            secondNum = getRandomNumber();
+            document.getElementById('firstNum').innerHTML = firstNum;
+            document.getElementById('secondNum').innerHTML = secondNum;
+        }
+
+        function findRightAnsver() {
+            if (firstNum < secondNum) {rightAnswer = '<';}
+            else if (firstNum > secondNum) {rightAnswer = '>';}
+            else {rightAnswer = '=';}
+        }
+
+        function compare() {
+            if (inputfield == rightAnswer) {point++; }
+            else {point--; }
+        }
+        function getRandomNumber() { 
+            return Math.round(Math.random() * 10); 
+        }
+
+        function submit(){
+        inputfield = document.getElementById('input').value;
+        findRightAnsver();
+        compare();
+        document.getElementById('point').innerHTML = point;
+        
+        }
+  
+    </script>
+</body>
+
+</html>
