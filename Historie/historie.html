@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En historie</title>
+</head>
+
+<body>
+    Det var en gang en mann ved navn <div id="navn">-----</div>,
+    som ønsket seg veldig en <div id="ting">-----</div> For å kunne skaffe
+    seg det, måtte han reise til <div id="by">-----</div>
+
+    </br>
+    <ul>
+        <mark>Navn:</mark>
+        <li>
+            <div id="erik" onclick="setNavn('Erik')"> Erik </div>
+        </li>
+        <li id="hans" onclick="setNavn('Hans')">Hans</li>
+        <li id="petter" onclick="setNavn('Petter')">Petter</li>
+        <li id="ole" onclick="setNavn('Ole')">Ole</li>
+    </ul>
+    <p></p>
+    <ul>
+        <mark>Ting:</mark>
+        <li>
+            <div id="sag" onclick="setTing('Sag')">Sag </div>
+        </li>
+        <li id="kniv" onclick="setTing('Kniv.')">Kniv</li>
+        <li id="motorsykkel" onclick="setTing('Motorsykkel.')">Motorsykkel</li>
+        <li id="båt" onclick="setTing('Båt.')">Båt</li>
+    </ul>
+    <p></p>
+    <ul>
+        <mark> By:</mark>
+        <li id="porsgrunn" onclick="setBy('Porsgrunn.')">Porsgrunn</li>
+        <li id="tønsberg" onclick="setBy('Tønsberg.')">Tønsberg</li>
+        <li id="risør" onclick="setBy('Risør.')">Risør</li>
+        <li id="bergen" onclick="setBy('Bergen.')">Bergen</li>
+    </ul>
+    <script>
+        var name = document.getElementById('navn').innerHTML;
+        var thing = document.getElementById('ting').innerHTML;
+        var town = document.getElementById('by').innerHTML;
+
+        function setNavn(name) {
+            navn.innerHTML = name;
+        }
+
+        function setTing(thing) {
+            ting.innerHTML = thing;
+        }
+        
+        function setBy(town) {
+            by.innerHTML = town;
+        }
+
+
+
+    </script>
+</body>
+
+</html>
