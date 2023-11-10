@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
+    <style>
+        .light {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    Lysbryter <div id="lightId" style="background-color: black;height: 50px;width: 50px;border-radius: 50%; cursor: pointer;"
+     onclick="turnLightOn()"></div> 
+    <div id="number"></div>
+    <button onclick="settNavn('10')">10</button>
+    <button onclick="settNavn('20')"> 20 </button>
+    <button onclick="NoeEkstra()">Pluss </button>
+    <button onclick="ekstra()">Tekst & Farge</button>
+    <button onclick="printNumbers()">Skriv ut listen</button>
+    <button onclick="printLetters('Ellen Irene Paulsen')">Print</button>
+    <button onclick="multiplayBy2()">Multiplay By 2</button>
+    <button onclick="getFirstWord()"> Get First Word </button>
+    <div id="numbers"></div>
+    <script>
+
+        var numId = document.getElementById('number');
+        let number = 0;
+        var sekunder = 0;
+        var timer;
+
+
+        function turnLightOn() {
+            if (document.getElementById('lightId').style.backgroundColor == 'yellow') {
+                document.getElementById('lightId').style.backgroundColor = 'black';
+            } else if (document.getElementById('lightId').style.backgroundColor == 'black') {
+                document.getElementById('lightId').style.backgroundColor = 'yellow';
+            }
+        }
+        function settNavn(valgtTall) {
+            number = valgtTall;
+            numId.innerHTML = number;
+        }
+        function settNavn2(valgtTall) {
+            number = valgtTall;
+            numId.innerHTML = number;
+        }
+        function NoeEkstra() {
+            number++;
+            numId.innerHTML = number;
+        }
+        function ekstra() {
+            document.getElementById('number').innerHTML = 'Hei på deg';
+            document.getElementById('number').style.backgroundColor = 'lightblue';
+            document.getElementById('number').style.color = 'green';
+        }
+        function printNumbers() {
+            let stopValue = 5;
+            for (let counter = 1; counter <= stopValue; counter++) {
+                document.getElementById('numbers').innerHTML += '<li>' + counter + '</li>';
+            }
+        }
+        function printLetters(inputString) {
+            let text = '';
+            document.getElementById("numbers").innerHTML += inputString;
+            for (let index = 0; index <= inputString.length; index++) {
+                text = text + inputString.charAt(index) + ' ';
+            }
+            //    document.getElementById("numbers").innerHTML = text;
+        }
+        function multiplayBy2() {
+            let number2 = 2;
+
+            while (number2 <= 100) {
+                number2 = number2 * 2;
+                document.getElementById('numbers').innerHTML += number2 + ' ';
+            }
+        }
+        function getFirstWord() {
+            let text = 'Ellen liker å reise';
+            let seperator = '';
+            let firstWord = '';
+            let index = 0;
+            while (seperator !== ' ') {
+                if (text.charAt(index) === ' ') { 
+                    seperator = ' ';
+                    }
+                firstWord += text.charAt(index);
+                index++;
+                document.getElementById('numbers').innerHTML += firstWord + ' ';
+            }
+
+        }
+    </script>
+</body>
+
+</html>
